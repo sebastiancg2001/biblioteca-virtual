@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+
+<script>
+function Validar()
+{
+    if(document.getElementById("nombre").value == "")
+    {
+        alert("El nombre no puede estar vacío");
+        return false;
+    }
+    if(document.getElementById("apellido").value == "")
+    {
+        alert("El apellido no puede estar vacío");
+        return false;
+    }
+    if(document.getElementById("dni").value == "" || !/^([0-9])*$/.test(document.getElementById("dni").value))
+    {
+        alert("El DNI está mal ingresado");
+        return false;
+    }
+    if(document.getElementById("telefono").value == "" || !/^([0-9])*$/.test(document.getElementById("telefono").value))
+    {
+        alert("El telefono está mal ingresado");
+        return false;
+    }
+    if(document.getElementById("usuario").value == "")
+    {
+        alert("El usuario no puede estar vacío");
+        return false;
+    }
+    if(document.getElementById("pass").value == "")
+    {
+        alert("La contraseña no puede estar vacía");
+        return false;
+    }
+    return true;
+}
+</script>
+<link href="estilo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div class="container" align="center">
+  <div class="header" align="center">
+        <h1 style="padding-top:10px; margin-bottom:-5px">Biblioteca Virtual</h1>
+        Sistema Online de Reserva de Libros
+  </div>
+  <div class="contentFull" align="center">
+    <form action="Registrar.jsp" method="post" onsubmit="return Validar()">
+    <table width="100%" border="0" cellpadding="0">
+      <tr>
+      <td colspan="2" align="center" bgcolor="#FFCC99" style="padding-top: 20px;"><h3>Formulario de Registraci&oacute;n</h3></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Nombre:</td>
+        <td width="50%" align="left"><input name="nombre" id="nombre" size="30" type="text"/></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Apellido:</td>
+        <td align="left"><input name="apellido" id="apellido" size="30" type="text"/></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">DNI:</td>
+        <td align="left"><input name="dni" id="dni"  value="" type="text" size="10" maxlength="9"/></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Tel&eacute;fono:</td>
+        <td align="left"><input name="telefono" id="telefono"  value="" type="text" size="10" maxlength="20"/></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Usuario:</td>
+        <td align="left"><input name="usuario" id="usuario" size="30" type="text"/></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Contrase&ntilde;a:</td>
+        <td align="left"><input name="pass" id="pass" size="30" type="password"/></td>
+      </tr>
+      <tr>
+      <td height="10" colspan="2"></td>
+      </tr>
+      <tr bgcolor="#FFCC99">
+        <td colspan="2" align="center"> 
+            <input type="submit" value="Enviar" style="width:100px; cursor:pointer"/> &nbsp; &nbsp; 
+            <input type="button" onclick="location='index.jsp'" value="Cancelar" style="width:100px; cursor:pointer"/> 
+        </td>
+        </tr>
+    </table>
+    </form>
+</div>
+<div class="footer" align="center">
+  <span style="font-size:10px"><b>Trabajo Final Java - UTN - FRRO</b><br />
+  Alvarez, Federico - Muccini, Ver&oacute;nica</span>
+</div>
+</div>
+</body>
+</html>
