@@ -1,0 +1,68 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+             <script>
+                
+            function Validar()
+            {
+              if( (document.getElementById("pasVieja").value=="") ||(document.getElementById("pasNueva").value=="") || document.getElementById("pasRep").value=="")
+              {
+                  alert("Debe completar todos los campos");
+                  return false;
+              } 
+              if(document.getElementById("pasNueva").value != document.getElementById("pasRep").value)
+              {
+                alert("Las pass no coinciden");
+                return false;
+              }
+                return true;    
+            }
+            </script>
+    <link href="estilo.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+  <div class="container" align="center">
+  <div class="header" align="center">
+        <h1 style="padding-top:10px; margin-bottom:-5px">Biblioteca Virtual</h1>
+        Sistema Online de Reserva de Libros
+  </div>
+  <div class="contentFull" align="center">
+    <form name="form" action="CambiarPass.jsp" method="post" onsubmit="return Validar()">
+    <table width="100%" border="0" cellpadding="0">
+      <tr>
+          <td colspan="2" align="center" bgcolor="#FFCC99" style="padding-top: 20px;"><h3>Cambiar Contraseña</h3></td>
+      </tr>
+      <tr>
+        <td width="50%" align="right">Contrase&ntilde;a Vieja:</td>
+        <td width="50%"><input name="pasVieja" id="pasVieja" size="30" type="password"/></td>
+      </tr>
+       <tr>
+        <td width="50%" align="right">Contrase&ntilde;a Nueva:</td>
+        <td width="50%"><input name="pasNueva" id="pasNueva" size="30" type="password"/></td>
+      </tr>
+       <tr>
+        <td width="50%" align="right">Repetir contrase&ntilde;a:</td>
+        <td width="50%"><input name="pasRep" id="pasRep" size="30" type="password"/></td>
+      </tr>
+      <tr>
+      <td height="10" colspan="2"></td>
+      </tr>
+      <tr bgcolor="#FFCC99">
+          <td colspan="2" align="center"><input type="submit" value="Enviar" style="width:100px; cursor:pointer">&nbsp;&nbsp;<input type="button" onclick="history.back()" value="Cancelar" style="width:100px; cursor:pointer"></td>
+        </tr>
+    </table>
+    </form>
+  </div>
+  <div class="footer" align="center">
+  <span style="font-size:10px"><b>Trabajo Final Java - UTN - FRRO</b><br />
+  Alvarez, Federico - Muccini, Ver&oacute;nica</span>
+</div>
+</div>
+</body>
+</html>
